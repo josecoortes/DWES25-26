@@ -1,0 +1,38 @@
+services:
+  web:
+    image: php:8.2-apache
+    container_name: web
+    ports:
+      - "8080:80"          # evita chocar con el puerto 80 local
+    volumes:
+      - ./www:/var/www/html
+    depends_on:
+      - db
+    # Habilitar módulos típicos de XAMPP (rewrite) en el arranque
+    command: /bin/sh -c "docker-php-ext-install mysqli && a2enmod rewrite && apache2-foreground"
+
+  db:
+    image: mariadb:11
+    container_name: db
+    environment:
+      - MARIADB_ROOT_PASSWORD=root
+      - MARIADB_DATABASE=app
+      - MARIADB_USER=app
+      - MARIADB_PASSWORD=app
+    volumes:
+      - db_data:/var/lib/mysql
+    ports:
+      - "3307:3306"        # 3307 en tu máquina → 3306 en el contenedor
+
+  phpmyadmin:
+    image: phpmyadmin:5
+    container_name: pma
+    environment:
+      - PMA_HOST=db
+    depends_on:
+      - db
+    ports:
+      - "8081:80"
+
+volumes:
+  db_data:
