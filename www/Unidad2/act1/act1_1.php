@@ -1,3 +1,12 @@
+<?php
+/*
+---
+title: Ejercicio 1: Impimir número PI
+desc: Numero PI como constante
+tags: [PHP, basico]
+---
+*/
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

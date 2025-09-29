@@ -1,3 +1,12 @@
+<?php
+/*
+---
+title: Ejercicio 5: Dados
+desc: 2 numeros al azar que se suman y se muestran como si tirases 2 dados
+tags: [PHP, basico, operadores, imagenes]
+---
+*/
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

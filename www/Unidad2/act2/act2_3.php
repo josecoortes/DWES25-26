@@ -1,3 +1,12 @@
+<?php
+/*
+---
+title: Ejercicio 3: nave espacial
+desc: Uso del operador <=>
+tags: [PHP, basico, operadores, <=>]
+---
+*/
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

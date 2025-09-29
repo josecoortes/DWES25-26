@@ -1,3 +1,12 @@
+<?php
+/*
+---
+title: Ejercicio 2: 2 número al azar
+desc: 2 numeros al azar y la media de estos
+tags: [PHP, basico, operadores]
+---
+*/
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

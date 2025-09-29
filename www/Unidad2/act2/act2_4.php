@@ -1,3 +1,12 @@
+<?php
+/*
+---
+title: Ejercicio 4: Operador Ternario
+desc: Uso del operador ternario
+tags: [PHP, basico, operadores, ternario]
+---
+*/
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

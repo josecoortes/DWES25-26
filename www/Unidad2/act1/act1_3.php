@@ -1,3 +1,12 @@
+<?php
+/*
+---
+title: Ejercicio 3: Tabla de variables
+desc: Tabla que muestra unas variables previamente definidas
+tags: [PHP, basico, tabla]
+---
+*/
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,10 +17,10 @@
 <body>
 
     <?php
-        $nombre = "Nicolás";
-        $apellido1 = "Jiménez";
-        $apellido2 = "Gutiérrez";
-        $email = "nicoejemplo@email.com";
+        $nombre = "Jose";
+        $apellido1 = "Cortes";
+        $apellido2 = "Martin";
+        $email = "joseejemplo@email.com";
     ?>
 
 

@@ -1,3 +1,12 @@
+<?php
+/*
+---
+title: Ejercicio 4: Porcentaje Aleatorio
+desc: genera un porcentaje y sale una barra midiendo el porcentaje
+tags: [PHP, basico, meter]
+---
+*/
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
