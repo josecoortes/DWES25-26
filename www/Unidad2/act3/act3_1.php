@@ -31,9 +31,9 @@ tags: [PHP, basico, if-else]
 ?>
 <h1>Juego: Mayor de tres números</h1>
     <ul>
-        <li>Número 1: <?php echo $num1 ?></li>
-        <li>Número 2: <?php echo $num2 ?></li>
-        <li>Número 3: <?php echo $num3 ?></li>
+        <li>Número 1: <b><?php echo $num1 ?></b></li>
+        <li>Número 2: <b><?php echo $num2 ?></b></li>
+        <li>Número 3: <b><?php echo $num3 ?></b></li>
     </ul>
 
     <h3>El número mayor es: <?php echo $numMayor?></h3>
