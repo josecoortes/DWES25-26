@@ -15,6 +15,7 @@ tags: [PHP, basico, for]
     <title>Act 4</title>
 </head>
 <body>
+    <h1>Números pares del 0 al 50</h1>
     <ul>
         <?php
         for ($i = 0; $i <= 50; $i += 2) {

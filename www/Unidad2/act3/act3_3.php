@@ -25,3 +25,5 @@ $texto = match ($num) {
 
 echo "El número generado es $num y en castellano es: $texto";
 ?>
+</body>
+</html>
