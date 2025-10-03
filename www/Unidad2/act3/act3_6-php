@@ -1,8 +1,8 @@
 <?php
 /*
 ---
-title: Ejercicio 5: suma de los numeros del 1 al 10
-desc: Suma total de los números del 1 al 10 
+title: Ejercicio 5: Mayor de 3 números
+desc: 3 números aleatorios y muestra cual es el mayor
 tags: [PHP, basico, while]
 ---
 */

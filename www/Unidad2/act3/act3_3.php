@@ -15,7 +15,7 @@ tags: [PHP, basico, match]
     <title>Act 3</title>
 </head>
 <?php
-$num = random_int(1,10);
+$num = rand(1,3);
 
 $texto = match ($num) {
     1 => 'uno',
