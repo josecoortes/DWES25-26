@@ -1,9 +1,9 @@
 <?php
 /*
 ---
-title: Ejercicio 1: Mayor de 3 números
-desc: 3 números aleatorios y muestra cual es el mayor
-tags: [PHP, basico, if-else]
+title: Ejercicio 2: simulacion de calificaciones
+desc: Aleatoriamente se escoje un número del 1 al 10 y te muestra un mensaje con el tipo de nota obtenida
+tags: [PHP, basico, switch-case]
 ---
 */
 ?>
