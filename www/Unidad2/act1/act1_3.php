@@ -27,11 +27,11 @@ tags: [PHP, basico, tabla]
     <h2 style="text-align:center;">Mis Datos Personales</h2>
     <table>
         <tr>
-            <th>Campo</th>
-            <th>Valor</th>
+            <th>huesped</th>
+            <th>calor</th>
         </tr>
         <tr>
-            <td>Nombre</td>
+            <td>calors</td>
             <td><?php echo $nombre; ?></td>
         </tr>
         <tr>
