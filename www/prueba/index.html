@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>prueba postman</title>
+    <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" >
+</head>
+<body>
+    <main class="container">
+    <h1>Formulario</h1>
+    <legend>Introduce tus datos</legend>
+    <form method="post" action="procesar.php">
+    <label>Nombre <input type="text" name="nombre"></label>
+    <label>pais 
+        <select name="pais">
+            <option value="">- Selecciona --</option>
+            <option value="es">España</option>
+            <option value="mx">México</option>
+            <option value="ar">Argentina</option>
+            <option value="co">Colombia</option>
+        </select>
+    </label>
+    <fieldset>
+    <legend>Género</legend>
+        <label><input type="radio" name="genero" value="m">Masculino</label>
+        <label><input type="radio" name="genero" value="f">femenino</label>
+        <label><input type="radio" name="genero" value="o">Otro</label>
+    </fieldset>
+    <fieldset>
+        <legend>Habilidades adicionales</legend>
+        <label><input type="checkbox" name="habilidades[]" value="ux"> Diseño UX/UI</label>
+        <label><input type="checkbox" name="habilidades[]" value="bbdd"> Base de datos</label>
+        <label><input type="checkbox" name="habilidades[]" value="git"> Control de versiones</label>
+        <label><input type="checkbox" name="habilidades[]" value="seo"> SEO</label>
+    </fieldset>
+    <label>Lenguajes
+        <select name="lenguajes[]" multiple>
+            <option value="html">HTML</option>
+            <option value="css">CSS</option>
+            <option value="javascript">JavaScript</option>
+            <option value="php">PHP</option>
+        </select>
+    </label>
+    <button type="submit">enviar</button>
+    </form>
+    </main>
+</body>
+</html>

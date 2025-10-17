@@ -6,12 +6,12 @@ $token = ["", "OK"];
 $cpuCargada = rand(0,150);
 $valorAleatorio = $token[array_rand($token)];
 
-echo $temperatura . "<br>";
-echo $valorAleatorio . "<br>";
-echo $cpuCargada . "<br>";
+echo "🌡️ Temperatura: " . $temperatura . "<br>";
+echo "🖥️ Carga CPU: " . $cpuCargada . "<br>";
+echo "🔐 token: " . $valorAleatorio . "<br>";
 
 if (empty($valorAleatorio)) {
-    die("Es un error crítico: no hay clave para arrancar el sistema");
+    die(" ❌ Es un error crítico: no hay clave para arrancar el sistema");
 }
 
 if ($temperatura > 80 || $temperatura < 0){
@@ -22,12 +22,12 @@ try {
     if ($cpuCargada > 100) {
     throw new TemperaturaAlta("CPU Cargada", 1);
 } else{
-    echo "Servidor iniciado correctamente <br>";
+    echo "✅ Servidor iniciado correctamente <br>";
 }
 } catch (TemperaturaAlta) {
-    echo "La CPU esta demasiado cargada, intentelo mas tarde";
+    echo "🚨 La CPU esta demasiado cargada, intentelo mas tarde";
 } finally{
-    echo "Fin de proceso";
+    echo "🧹 Fin del proceso";
 }
 
 ?>
