@@ -11,9 +11,10 @@
     <main class="container">
     <h1>Formulario</h1>
     <legend>Introduce tus datos</legend>
-    <form method="post" action="procesar.php">
+    <form method="post" action="procesar.php" enctype="multipart/form-data">
     <label>Nombre <input type="text" name="nombre"></label>
-    <label>pais 
+    <label>Apellidos <input type="text" name="apellidos"></label>
+    <label>pais
         <select name="pais">
             <option value="">- Selecciona --</option>
             <option value="es">España</option>
@@ -42,6 +43,9 @@
             <option value="javascript">JavaScript</option>
             <option value="php">PHP</option>
         </select>
+    </label>
+    <label>Subir archivo
+        <input type="file" name="archivo" accept=".pdf,.jpg,.png,.doc,.docx">
     </label>
     <button type="submit">enviar</button>
     </form>
