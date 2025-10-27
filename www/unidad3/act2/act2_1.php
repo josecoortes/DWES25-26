@@ -1,21 +1,19 @@
 <?php 
-if (!empty($_POST)) {
-    if (!empty($_POST['color'])) {
-        $color = $_POST['color'];
-    } else
-        $color = "#FFFFFF";
-} else {
-    $color = "#FFFFFF";
+if (isset($_POST['color'])){
+    $value = $_POST['color'];
+    setcookie("colorFondo", $value, time() + 3600);
+    $color = $value;
+    } else {
+        $color = $_COOKIE["colorFondo"] ?? 'white';
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>act1</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css" >
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
 </head>
 <body style="background-color: <?= $color?>;">
     <main class="container">
@@ -33,6 +31,8 @@ if (!empty($_POST)) {
                     </select>
                 </label>
                 <button type="submit">Cambiar color</button>
+
+                <p>La cookie se guardara durante 1 hora</p>
             </form>
 </main>
 </body>
