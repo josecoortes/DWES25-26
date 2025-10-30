@@ -1,0 +1,409 @@
+/* ========= Reset & Base ========= */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, 'Helvetica Neue', Arial, sans-serif;
+  background: #0d1117;
+  color: #e6edf3;
+  line-height: 1.55;
+}
+
+/* ========= Header / Barra superior ========= */
+/* Funcionará tanto si usas <header> como si usas <div class="header"> */
+header, .header {
+  position: sticky; top: 0; z-index: 10;
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  padding: 1rem 1.25rem;
+  background: #172b3f;
+  border-bottom: 1px solid #010810;
+}
+
+.brand { display: flex; align-items: center; gap: .75rem; }
+
+/* Evitamos pisar el banner: NO damos reglas genéricas a .brand img */
+
+/* Banner explícito (imagen de cabecera) */
+.brand .banner {
+  display: block;
+  height: 120px;        /* ajusta a tu gusto */
+  max-width: 320px;     /* controla el ancho para que no crezca demasiado */
+  width: auto;          /* mantiene proporción */
+  object-fit: cover;
+  border-radius: 10px;
+  margin-right: .75rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,.25);
+}
+
+/* Títulos y subtítulos */
+.title h1,
+#studentName {           /* por compatibilidad con tu HTML actual */
+  margin: .1rem 0;
+  font-size: 1.15rem;
+  color:chocolate;
+}
+
+/* Si quieres forzar tamaños grandes en portada (como tenías) */
+#studentName { font-size: 50px; }
+
+/* Subtítulo/meta (funciona con id o class) */
+.muted, #metaLine, .metaLine { color: #9da7b3; }
+#metaLine, .metaLine { font-size: 20px; }
+
+/* Buscador (funciona si usas #q o #search) */
+#q, #search {
+  min-width: 240px;
+  padding: .6rem .75rem;
+  border-radius: .65rem;
+  background: #0d1117;
+  color: #e6edf3;
+  border: 1px solid #30363d;
+}
+#search:focus, #q:focus { outline: none; box-shadow: 0 0 0 3px rgba(31,111,235,.35); }
+
+/* ========= Contenedor principal ========= */
+.container,
+main { max-width: 1100px; margin: 0 auto; padding: 1.25rem; }
+
+/* ========= Unidad (grupo de ejercicios) ========= */
+.unit {
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 14px;
+  box-shadow: 0 12px 30px rgba(0,0,0,.25);
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+/* Dos variantes de cabecera de unidad (según plantilla) */
+.unit h2 {
+  margin: 0;
+  padding: 1rem;
+  background: #111827;
+  border-bottom: 1px solid #30363d;
+  font-size: 1.05rem;
+}
+.unit-head {            /* si usas la versión con unit-head / unit-body */
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 1rem 1.1rem;
+  background: #111827;
+  border-bottom: 1px solid #30363d;
+}
+.unit-title { display: flex; align-items: center; gap: .6rem; }
+.pill {
+  font-size: .8rem; padding: .2rem .5rem;
+  border: 1px solid #30363d; border-radius: 999px; color: #9da7b3;
+}
+.count { font-variant-numeric: tabular-nums; }
+
+/* Cuerpo de la unidad */
+.grid,
+.unit-body {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: .9rem;
+  padding: 1rem 1.1rem;
+}
+
+/* ========= Tarjeta de ejercicio ========= */
+.card {
+  display: flex; flex-direction: column; gap: .5rem;
+  background: #0d1117;
+  border: 1px solid #30363d;
+  border-radius: 12px;
+  padding: .9rem;
+  transition: .2s;
+}
+.card:hover { transform: translateY(-3px); border-color: #3b82f6; }
+.card h3 { font-size: 1rem; margin: .2rem 0; }
+.card p { margin: 0; color: #9da7b3; min-height: 2.2em; }
+
+/* Tags */
+.tags { display: flex; flex-wrap: wrap; gap: .35rem; }
+.tag {
+  font-size: .75rem; padding: .18rem .45rem; border-radius: 6px;
+  color: #7aa2ff; background: #1f6feb1a; border: 1px solid #1f6feb33;
+}
+
+/* Botones */
+.actions { display: flex; gap: .5rem; margin-top: auto; }
+.btn, .btn1,.ghost {
+  display: inline-flex; align-items: center; justify-content: center;
+  text-decoration: none; padding: .5rem .7rem; border-radius: .55rem;
+  font-weight: 600; border: 1px solid transparent;
+}
+.btn { background: #1f6feb; color: #fff; }
+.btn1 {background: #0a570b; color: #fff; }
+.btn:hover { filter: brightness(1.08); }
+.ghost { border-color: #30363d; color: #e6edf3; }
+.ghost:hover { background: #161b22; }
+
+/* Varias */
+.empty { padding: 1rem; color: #9da7b3; }
+.footer { padding: 2rem 1rem; text-align: center; border-top: 1px solid #30363d; background: #0d1117; }
+
+/* ========= Responsive ========= */
+@media (max-width: 640px) {
+  #search, #q { min-width: 0; width: 45vw; }
+  .title h1 { font-size: 1rem; }
+  .brand .banner { height: 56px; max-width: 56vw; }
+}
+
+
+
+/* =============================
+   Colores diferenciados por Unidad y Actividad
+   ============================= */
+
+/* Fondo suave distinto para cada unidad */
+.unit:nth-of-type(1) { background: rgba(37,99,235,0.08); border-color: #2563eb; } /* azul */
+.unit:nth-of-type(2) { background: rgba(22,163,74,0.08); border-color: #16a34a; } /* verde */
+.unit:nth-of-type(3) { background: rgba(220,38,38,0.08); border-color: #dc2626; } /* rojo */
+.unit:nth-of-type(4) { background: rgba(147,51,234,0.08); border-color: #9333ea; } /* violeta */
+.unit:nth-of-type(5) { background: rgba(217,119,6,0.08); border-color: #d97706; } /* naranja */
+.unit:nth-of-type(6) { background: rgba(8,145,178,0.08); border-color: #0891b2; } /* turquesa */
+
+/* Cabecera de cada actividad dentro de la unidad */
+.unit-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.1rem;
+  border-bottom: 1px solid #30363d;
+}
+
+/* Alternar cabeceras de actividad con colores más intensos */
+.unit:nth-of-type(1) .unit-head:nth-of-type(odd) {
+  background: linear-gradient(135deg, #1e3a8a, #2563eb);
+}
+.unit:nth-of-type(1) .unit-head:nth-of-type(even) {
+  background: linear-gradient(135deg, #2563eb, #60a5fa);
+}
+
+.unit:nth-of-type(2) .unit-head:nth-of-type(odd) {
+  background: linear-gradient(135deg, #065f46, #16a34a);
+}
+.unit:nth-of-type(2) .unit-head:nth-of-type(even) {
+  background: linear-gradient(135deg, #16a34a, #4ade80);
+}
+
+.unit:nth-of-type(3) .unit-head:nth-of-type(odd) {
+  background: linear-gradient(135deg, #7f1d1d, #dc2626);
+}
+.unit:nth-of-type(3) .unit-head:nth-of-type(even) {
+  background: linear-gradient(135deg, #dc2626, #f87171);
+}
+
+.unit:nth-of-type(4) .unit-head:nth-of-type(odd) {
+  background: linear-gradient(135deg, #5b21b6, #9333ea);
+}
+.unit:nth-of-type(4) .unit-head:nth-of-type(even) {
+  background: linear-gradient(135deg, #9333ea, #c084fc);
+}
+
+.unit:nth-of-type(5) .unit-head:nth-of-type(odd) {
+  background: linear-gradient(135deg, #92400e, #d97706);
+}
+.unit:nth-of-type(5) .unit-head:nth-of-type(even) {
+  background: linear-gradient(135deg, #d97706, #fbbf24);
+}
+
+.unit:nth-of-type(6) .unit-head:nth-of-type(odd) {
+  background: linear-gradient(135deg, #155e75, #0891b2);
+}
+.unit:nth-of-type(6) .unit-head:nth-of-type(even) {
+  background: linear-gradient(135deg, #0891b2, #22d3ee);
+}
+
+/* Títulos y pills blancos sobre la cabecera */
+.unit-head h3,
+.unit-head .pill,
+.unit-head .count {
+  color: #fff;
+  font-weight: 600;
+}
+
+/* Píldora “Actividad” */
+.unit-title .pill {
+  background: rgba(255,255,255,0.25);
+  border: 1px solid rgba(255,255,255,0.35);
+  padding: .25rem .65rem;
+  border-radius: 999px;
+  font-size: .8rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+/* Contador de ejercicios */
+.unit-head .count {
+  background: rgba(255,255,255,0.25);
+  border-radius: 8px;
+  padding: .2rem .6rem;
+  font-size: .8rem;
+  color: #fff;
+}
+
+#q {
+  font-size: 1.2rem;   /* texto más grande */
+  padding: 0.75rem 1rem; /* más alto y cómodo */
+  width: 80%;        /* ocupa todo el ancho del header */
+  max-width: 300px;   /* límite opcional */
+  border-radius: 8px; /* esquinas redondeadas */
+  border: 2px solid #ccc;
+}
+
+.emoji {
+  font-size: 2rem;   /* Cambia el tamaño (2rem = bastante grande) */
+  margin-left: 8px;  /* Espacio respecto al botón */
+  vertical-align: middle;
+}
+
+/* ===== HEADER: escritorio a la izquierda, responsive centrado ===== */
+
+/* Escritorio: dos columnas, sin centrar */
+.header{
+  display: grid;
+  grid-template-columns: 1fr 420px;   /* brand | buscador */
+  gap: 16px;
+  align-items: center;
+  padding: 16px 20px;
+  
+  /* NO centramos el contenedor en desktop */
+}
+
+.header .brand{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;        /* izquierda */
+  gap: 12px;
+  text-align: left;                   /* títulos a la izquierda */
+  flex-wrap: wrap;
+  min-width: 0;
+}
+
+.header .banner{
+  width: clamp(190px, 14vw, 240px);   /* tamaño cómodo en desktop */
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+.header .title h1{ margin:0 0 4px; line-height:1.15; font-size: clamp(18px, 2vw + 8px, 28px); }
+.header .title .muted{ margin:0 0 8px; opacity:.8; font-size: clamp(12px, 1vw + 8px, 14px); }
+
+/* Buscador ocupa su columna a la derecha */
+/* ===== Buscador más grande ===== */
+#q{
+  width: 100%;
+  max-width: 640px;
+  justify-self: center;
+  padding: 14px 16px;      /* más alto/ancho */
+  font-size: 16px;         /* texto un poquito mayor */
+  border: 1px solid #263047;
+  background: #0f1218;
+  color: #e6e9f5;
+  border-radius: 12px;
+  outline: none;
+}
+#q::placeholder{ color:#9aa3b2; font-size: 16px; }
+
+
+/* ===== Breakpoints ===== */
+
+/* <= 1024px: columna del buscador un poco más compacta */
+@media (max-width: 1024px){
+  .header{ grid-template-columns: 1fr 360px; }
+}
+
+/* <= 960px: APILADO y ahí sí TODO centrado y “cuadrado” */
+@media (max-width: 960px){
+  .header{
+    grid-template-columns: 1fr;       /* stack */
+    gap: 14px;
+    padding: 14px 16px;
+  }
+  .header .brand{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;               /* títulos centrados SOLO en móvil */
+  }
+  .header .banner{
+    width: clamp(160px, 40vw, 220px); /* baja un pelín para móvil */
+  }
+  #q{
+    max-width: 620px;                 /* ancho contenido */
+    margin-inline: auto;              /* centrado */
+  }
+}
+
+/* <= 640px: botón a ancho completo si quieres */
+@media (max-width: 640px){
+  .header .title .btn{
+    width: 100%;
+    text-align: center;
+  }
+}
+
+/* Embebido (opcional): compacto */
+html[data-embed="1"] .header{
+  padding: 10px 12px;
+  gap: 10px;
+}
+/* ===== Botones de UNIDADES — centrados y estilo como .btn ===== */
+
+/* Contenedor de la barra (mismo fondo/borde que el header) */
+.unit-filter{
+  background: #48627d;
+  border-bottom: 1px solid #010810;
+  padding: 0.75rem 1rem;
+  display: flex;
+  justify-content: center;  /* centra la fila de botones */
+  border-bottom-left-radius: 12px;   /* 👈 radio parte inferior izquierda */
+  border-bottom-right-radius: 12px;  /* 👈 radio parte inferior derecha */
+}
+
+/* Fila de botones centrada, con salto de línea si no caben */
+.unit-filter .unit-filter-wrap{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;  /* centrado real */
+  gap: 0.6rem;
+  max-width: 1100px;
+  width: 100%;
+}
+
+/* Estilo de los botones de unidad:
+   - Especificidad > .ghost para sobrescribir color/borde
+   - Visual igual que .btn (azul, texto blanco, hover) */
+.unit-filter .unit-btn{
+  background: #203554;           /* igual que .btn */
+  color: #fff;
+  border: 1px solid transparent;
+  border-radius: 0.55rem;
+  padding: 0.5rem 0.9rem;
+  font-weight: 600;
+  font-size: 0.92rem;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: filter 0.2s ease;
+}
+
+/* Hover igual que .btn:hover */
+.unit-filter .unit-btn:hover{
+  filter: brightness(1.08);
+}
+
+/* Estado seleccionado (el JS ya pone .active) */
+.unit-filter .unit-btn.active{
+  background: #2563eb;  /* un poco más oscuro para marcar selección */
+}
+
+/* Responsive: que sigan centrados y con separación correcta */
+@media (max-width: 640px){
+  .unit-filter{ padding: 0.6rem 0.9rem; }
+  .unit-filter .unit-filter-wrap{ gap: 0.5rem; }
+}

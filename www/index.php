@@ -1,6 +1,6 @@
 <?php
 // ======= CONFIG =======
-$alumno     = "Federico Huércano Ruiz";
+$alumno     = "Jose cortes Martin";
 $asignatura = "Desarrollo Web en Entorno Servidor";
 $curso      = "2025/26";
 $github     = "https://github.com/fhuerui697/DWES25-26"; 
