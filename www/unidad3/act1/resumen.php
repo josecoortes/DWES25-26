@@ -93,7 +93,7 @@
           echo "<li>$e</li>";
         }
         echo "</ul>";
-        echo "<p><a href='index.php'>Volver al formulario</a></p>";
+        echo "<p><a href='act1_1.html'>Volver al formulario</a></p>";
         echo "</article>";
       } else {
         echo "<h3> Datos recibidos correctamente:</h3>";
