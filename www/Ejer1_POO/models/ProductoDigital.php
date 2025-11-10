@@ -13,7 +13,7 @@ class ProductoDigital extends Producto{
     }
 
     public function mostrarResumen() {
-        echo "📦 Producto físico" . $this->getCodigo() . " - " . $this->getPrecio() . " ( " . $this->getPeso() . "€ )";    
+        echo "📦 Producto Digital" . $this->getCodigo() . " - " . $this->getPrecio() . " ( " . $this->getPeso() . "€ )";
     }
 }
 ?>

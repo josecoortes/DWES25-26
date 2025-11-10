@@ -1,6 +1,6 @@
 <?php
-namespace app\Models;
-abstract class Cliente
+namespace App\Models;
+class Cliente
 {
     private string $nombre;
     private string $email;

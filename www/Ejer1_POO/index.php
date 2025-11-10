@@ -1,10 +1,16 @@
 <?php
-include "models/Producto.php";
-include "models/ProductoDigital.php";
-include "models/ProductoFisico.php";
-include "models/Cliente.php";
-include "models/Pedido.php";
-include "app/interfaces/ResumenInterface.php";
+require_once __DIR__ . 'app/interfaces/ResumenInterface.php';
+require_once __DIR__ . 'models/Producto.php';
+require_once __DIR__ . 'models/ProductoFisico.php';
+require_once __DIR__ . 'models/ProductoDigital.php';
+require_once __DIR__ . 'models/Cliente.php';
+require_once __DIR__ . 'models/Pedido.php';
+
+use App\Models\ProductoFisico;
+use App\Models\ProductoDigital;
+use App\Models\Cliente;
+use App\Models\Pedido;
+
 // Crear clientes
 $cliente1 = new Cliente("Ana López", "ana@example.com");
 $cliente2 = new Cliente("Carlos Pérez", "carlos@example.com");

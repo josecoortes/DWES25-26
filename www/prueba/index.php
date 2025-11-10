@@ -1,35 +1,24 @@
 <?php
 try {
-    // 1️⃣ Conexión con la base de datos
-    $conn = new PDO("mysql:host=db;dbname=dwes;charset=utf8", "root", "root");
+    // Conexión con la base de datos
+    $conn = new PDO("mysql:host=db;dbname=dwes;charset=utf8mb4", "root", "root");
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-    // 2️⃣ Consulta SQL con parámetros nombrados
-    $sql = "SELECT * FROM tienda WHERE nombre = :nombre AND tlf = :tlf";
-    $stmt = $conn->prepare($sql);
+    // Crear una tabla
+    $conn->exec("CREATE TABLE IF NOT EXISTS productos (
+            id INT AUTO_INCREMENT PRIMARY KEY,
+            nombre VARCHAR(100) NOT NULL,
+            precio DECIMAL(10,2)
+        )");
 
-    // 3️⃣ Enlazamos variables a los parámetros
-    $stmt->bindParam(':nombre', $nombre);
-    $stmt->bindParam(':tlf', $tlf);
+    // Agregar una columna nueva
+    $conn->exec("ALTER TABLE productos ADD COLUMN stock INT DEFAULT 0");
 
-    // 4️⃣ Asignamos valores
-    $nombre = "PetWorld";
-    $tlf = "931445566";
+    // Vaciar una tabla
+    $conn->exec("TRUNCATE TABLE productos");
 
-    // 5️⃣ Establecemos el modo de obtención como asociativo
-    $stmt->setFetchMode(PDO::FETCH_ASSOC);
-
-    // 6️⃣ Ejecutamos la consulta
-    $stmt->execute();
-
-    // 7️⃣ Mostramos los resultados
-    while ($fila = $stmt->fetch()) {
-        echo "Código: " . $fila['cod'] . "<br>";
-        echo "Nombre: " . $fila['nombre'] . "<br>";
-        echo "Teléfono: " . $fila['tlf'] . "<br><br>";
-    }
-
+    echo "Operaciones DDL ejecutadas correctamente.";
 } catch (PDOException $e) {
-    echo "❌ Error: " . $e->getMessage();
+    echo "Error: " . $e->getMessage();
 }
 ?>
