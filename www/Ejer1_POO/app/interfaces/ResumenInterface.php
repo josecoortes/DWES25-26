@@ -1,5 +1,6 @@
 <?php
-interface ResumenPedido{
-    public function mostrarDetalles();
+
+interface ResumenInterface
+{
+
 }
-?>
