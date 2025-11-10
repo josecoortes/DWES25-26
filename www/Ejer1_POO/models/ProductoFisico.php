@@ -1,4 +1,5 @@
 <?php
+namespace App\Models;
 class ProductoFisico extends Producto{
     private int $tamanoArchivo;
 

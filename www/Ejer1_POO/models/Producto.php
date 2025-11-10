@@ -1,4 +1,5 @@
 <?php
+namespace App\Models;
 abstract class Producto{
     private string $codigo;
     protected float $precio;

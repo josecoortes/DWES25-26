@@ -1,4 +1,5 @@
 <?php
+namespace App\Models;
 class ProductoDigital extends Producto{
     private int $peso;
 
