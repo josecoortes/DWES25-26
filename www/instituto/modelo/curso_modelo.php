@@ -1,8 +1,6 @@
 <?php
 
-namespace modelo;
-
-class curso_modelo
+class CursoModelo
 {
 private PDO $pdo;
 
@@ -15,8 +13,6 @@ private PDO $pdo;
         $sql = "INSERT INTO cursos (nombre) VALUES (?)";
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute([$nombre]);
-
-        // Devuelve el último ID insertado
         return (int)$this->pdo->lastInsertId();
     }
 
@@ -43,8 +39,11 @@ private PDO $pdo;
     }
 
     public function vaciarTodo(): void {
-        // TRUNCATE TABLE es más eficiente que DELETE y resetea el AUTO_INCREMENT
-        $sql = "TRUNCATE TABLE cursos";
-        $this->pdo->exec($sql);
+        // 1. Borramos todas las filas.
+        // Esto funciona porque el controlador ya ha vaciado 'estudiantes'
+        $this->pdo->exec('DELETE FROM cursos');
+        
+        // 2. Reiniciamos el contador AUTO_INCREMENT manualmente
+        $this->pdo->exec('ALTER TABLE cursos AUTO_INCREMENT = 1');
     }
 }
