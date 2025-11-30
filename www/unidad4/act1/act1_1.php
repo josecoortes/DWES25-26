@@ -1,10 +1,10 @@
 <?php
-require_once __DIR__ . 'app/interfaces/ResumenInterface.php';
-require_once __DIR__ . 'models/Producto.php';
-require_once __DIR__ . 'models/ProductoFisico.php';
-require_once __DIR__ . 'models/ProductoDigital.php';
-require_once __DIR__ . 'models/Cliente.php';
-require_once __DIR__ . 'models/Pedido.php';
+require_once __DIR__ . '/app/interfaces/ResumenInterface.php';
+require_once __DIR__ . '/models/Producto.php';
+require_once __DIR__ . '/models/ProductoFisico.php';
+require_once __DIR__ . '/models/ProductoDigital.php';
+require_once __DIR__ . '/models/Cliente.php';
+require_once __DIR__ . '/models/Pedido.php';
 
 use App\Models\ProductoFisico;
 use App\Models\ProductoDigital;
@@ -36,7 +36,7 @@ $pedido2->agregarProducto($laptop);
 $pedido2->agregarProducto($musica);
 
 // Mostrar detalles
-echo "<pre>"; // para que se vea bien formateado en navegador
+echo "<pre>";
 $pedido1->mostrarDetalle();
 echo "\n-----------------------------\n\n";
 $pedido2->mostrarDetalle();
